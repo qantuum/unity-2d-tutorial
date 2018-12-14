@@ -19,12 +19,31 @@ public class PlayerScript : MonoBehaviour {
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
 
+
+        // block player from going off-screen !!!
+        var bottomLeft = Camera.main.ScreenToWorldPoint(Vector3.zero);
+
+        var topRight = Camera.main.ScreenToWorldPoint(new Vector3(
+            Camera.main.pixelWidth, Camera.main.pixelHeight));
+
+        var cameraRect = new Rect(
+            bottomLeft.x,
+            bottomLeft.y,
+            topRight.x - bottomLeft.x,
+            topRight.y - bottomLeft.y);
+        transform.position = new Vector3(
+        Mathf.Clamp(transform.position.x, cameraRect.xMin, cameraRect.xMax),
+        Mathf.Clamp(transform.position.y, cameraRect.yMin, cameraRect.yMax),
+        transform.position.z);
+        
+
+
         // 4 - Movement per direction
         movement = new Vector2(
           speed.x * inputX,
           speed.y * inputY);
 
-        // ...
+
 
         // 5 - Shooting
         bool shoot = Input.GetButtonDown("Fire1");
