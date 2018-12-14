@@ -65,9 +65,9 @@
     <Compile Include="Assets\Scripts\HealthScript.cs" />
     <Compile Include="Assets\Scripts\MoveScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
-    <Compile Include="Assets\Scripts\ScrollingScript.cs" />
     <Compile Include="Assets\Scripts\ShotScript.cs" />
     <Compile Include="Assets\Scripts\WeaponScript.cs" />
+    <None Include="Assets\Sounds\readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/jojo3/Documents/prog_dev/unity_games/test2D/unity-2d-tutorial/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
