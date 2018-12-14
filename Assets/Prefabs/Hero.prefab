@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114196112709107998}
   - component: {fileID: 114180959411952488}
   - component: {fileID: 114036528326930180}
+  - component: {fileID: 114286742232855530}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1087662484808026}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -13.05, y: -1.49, z: 0}
   m_LocalScale: {x: 0.3254672, y: 0.35721868, z: 1}
   m_Children: []
@@ -64,7 +65,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61584310491321490
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -128,6 +129,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 4491376601191928, guid: 777a922c0f586e445a8fa5ee1121bcdd, type: 2}
   shootingRate: 0.25
+--- !u!114 &114286742232855530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087662484808026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797c96e713383a34099c3b2123ce7082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 10, y: 10}
+  direction: {x: -1, y: 0}
+  isLinkedToCamera: 0
+  isLooping: 0
 --- !u!212 &212326791330817248
 SpriteRenderer:
   m_ObjectHideFlags: 1
