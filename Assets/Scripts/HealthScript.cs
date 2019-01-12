@@ -8,6 +8,8 @@ public class HealthScript : MonoBehaviour
     /// <summary>
     /// Total hitpoints
     /// </summary>
+    /// 
+    public int maxHealth = 1;
     public int hp = 1;
 
     /// <summary>
@@ -27,6 +29,21 @@ public class HealthScript : MonoBehaviour
         {
             // Dead!
             Destroy(gameObject);
+        }
+    }
+
+    public void Restore(int healCount)
+    {
+        if (hp < maxHealth)
+        {
+            if (hp + healCount < maxHealth)
+            {
+                hp += healCount;
+            }
+            else
+            {
+                hp = maxHealth;
+            }
         }
     }
 

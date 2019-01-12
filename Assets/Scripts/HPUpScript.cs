@@ -6,15 +6,18 @@ public class HPUpScript : MonoBehaviour {
 
     public int restore = 1;
 
-    void OnTriggerEnter2D(Collider2D otherCollider)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerScript hero = otherCollider.gameObject.GetComponent<PlayerScript>();
+        PlayerScript hero = collision.gameObject.GetComponent<PlayerScript>();
         if (hero != null)
         {
             HealthScript life = hero.gameObject.GetComponent<HealthScript>();
-            life.hp = life.hp + restore;
-            
+            life.Restore(restore);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        else
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
+        }
     }
 }
