@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
@@ -12,10 +13,22 @@ public class HealthScript : MonoBehaviour
     public int maxHealth = 1;
     public int hp = 1;
 
+    public Slider HealthBar;
+
+    public Image DamageImg;
+    public float flashSpeed = 5f;
+    public Color flashColour = new Color(1f, 0f, 0f, 0.9f);
+    bool damaged; 
+
     /// <summary>
     /// Enemy or player?
     /// </summary>
     public bool isEnemy = true;
+
+    void Update()
+    {
+        OnHeroDamage();
+    }
 
     /// <summary>
     /// Inflicts damage and check if the object should be destroyed
@@ -29,6 +42,13 @@ public class HealthScript : MonoBehaviour
         {
             // Dead!
             Destroy(gameObject);
+        }
+
+        // updating the Hero's HealthBar
+        if (isEnemy == false)
+        {
+            damaged = true;
+            HealthBar.value = hp;
         }
     }
 
@@ -61,6 +81,24 @@ public class HealthScript : MonoBehaviour
                 // Destroy the shot
                 Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
             }
+        }
+    }
+
+    // changing the colour for a moment to show that the hero was damaged
+    void OnHeroDamage()
+    {
+        if (isEnemy == false)
+        {
+            if (damaged)
+            {
+                DamageImg.color = flashColour;
+                DamageImg.color = Color.Lerp(DamageImg.color, Color.clear, flashSpeed * Time.deltaTime);
+            }
+            else
+            {
+                DamageImg.color = Color.clear;
+            }
+            damaged = false;
         }
     }
 }

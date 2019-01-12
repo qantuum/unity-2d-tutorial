@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PowerUpScript : MonoBehaviour {
 
@@ -18,6 +19,8 @@ public class PowerUpScript : MonoBehaviour {
                     HealthScript life = hero.gameObject.GetComponent<HealthScript>();
                     life.Restore(add);
                     Destroy(gameObject);
+                    // updating the Hero's HealthBar
+                    Canvas.FindObjectOfType<Slider>().value = life.hp;
                     break;
                 case "shootingRate":
                     WeaponScript weapon = hero.gameObject.GetComponent<WeaponScript>();
