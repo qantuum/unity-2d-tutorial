@@ -6,24 +6,15 @@ public class HPUpScript : MonoBehaviour {
 
     public int restore = 1;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     void OnTriggerEnter2D(Collider2D otherCollider)
     {
-        string colliderName = otherCollider.gameObject.name;
-        if (colliderName == "Hero")
+        PlayerScript hero = otherCollider.gameObject.GetComponent<PlayerScript>();
+        if (hero != null)
         {
-            HealthScript life = otherCollider.GetComponent<HealthScript>();
-            life.hp++;
-            Destroy(this.gameObject);
+            HealthScript life = hero.gameObject.GetComponent<HealthScript>();
+            life.hp = life.hp + restore;
+            
         }
+        Destroy(gameObject);
     }
 }
