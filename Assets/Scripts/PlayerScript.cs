@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -94,9 +95,12 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
+    // on hero's death
     void OnDestroy()
     {
-        var gameOver = FindObjectOfType<GameOverScript>();
         Canvas.FindObjectOfType<PauseMenu>().pauseMenuUI.SetActive(true);
+        Button[] buttons = PauseMenu.FindObjectsOfType<Button>();
+        // turning off "Resume button" in the menu after death of the hero
+        buttons[1].interactable = false;
     }
 }
