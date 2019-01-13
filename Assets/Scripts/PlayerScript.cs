@@ -96,8 +96,7 @@ public class PlayerScript : MonoBehaviour {
 
     void OnDestroy()
     {
-        // Game Over.
         var gameOver = FindObjectOfType<GameOverScript>();
-        gameOver.ShowButtons();
+        Canvas.FindObjectOfType<PauseMenu>().pauseMenuUI.SetActive(true);
     }
 }

@@ -13,34 +13,34 @@ public class GameOverScript : MonoBehaviour {
         buttons = GetComponentsInChildren<Button>();
 
         // Disable them
-        HideButtons();
+        // HideButtons();
     }
 
-    public void HideButtons()
-    {
-        foreach (var b in buttons)
-        {
-            b.gameObject.SetActive(false);
-        }
-    }
+    //public void HideButtons()
+    //{
+    //    foreach (var b in buttons)
+    //    {
+    //        b.gameObject.SetActive(false);
+    //    }
+    //}
 
-    public void ShowButtons()
-    {
-        foreach (var b in buttons)
-        {
-            b.gameObject.SetActive(true);
-        }
-    }
+    //public void ShowButtons()
+    //{
+    //    foreach (var b in buttons)
+    //    {
+    //        b.gameObject.SetActive(true);
+    //    }
+    //}
 
-    public void ExitToMenu()
-    {
-        // Reload the level
-        Application.LoadLevel("Menu");
-    }
+    //public void ExitToMenu()
+    //{
+    //    // Reload the level
+    //    Application.LoadLevel("Menu");
+    //}
 
-    public void RestartGame()
-    {
-        // Reload the level
-        Application.LoadLevel("Stage1");
-    }
+    //public void RestartGame()
+    //{
+    //    // Reload the level
+    //    Application.LoadLevel("Stage1");
+    //}
 }

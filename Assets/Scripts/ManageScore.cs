@@ -15,15 +15,10 @@ public class ManageScore : MonoBehaviour {
         score = 0;
     }
 
+    // updating score on the screen with every enemy killed
     void Update()
     {
         text.text = "SCORE: " + score;
     }
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
 
 }
