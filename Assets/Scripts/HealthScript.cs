@@ -42,6 +42,11 @@ public class HealthScript : MonoBehaviour
         {
             // Dead!
             Destroy(gameObject);
+
+            if (isEnemy == true)
+            {
+                ManageScore.score +=10;
+            }
         }
 
         // updating the Hero's HealthBar
