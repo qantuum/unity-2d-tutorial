@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114196112709107998}
   - component: {fileID: 114180959411952488}
   - component: {fileID: 114036528326930180}
-  - component: {fileID: 114286742232855530}
+  - component: {fileID: 114497611376675362}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -102,7 +102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb442d8166472f44d9875eb9881d4555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 15
+  maxHealth: 10
+  hp: 10
+  HealthBar: {fileID: 0}
+  DamageImg: {fileID: 0}
+  flashSpeed: 5
+  flashColour: {r: 1, g: 0, b: 0, a: 0.9}
   isEnemy: 0
 --- !u!114 &114180959411952488
 MonoBehaviour:
@@ -115,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188356e6d8cc7ca4fb3b008b04ef6ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 10, y: 10}
+  speed: {x: 25, y: 25}
 --- !u!114 &114196112709107998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 4491376601191928, guid: 777a922c0f586e445a8fa5ee1121bcdd, type: 2}
   shootingRate: 0.25
---- !u!114 &114286742232855530
+--- !u!114 &114497611376675362
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -140,9 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797c96e713383a34099c3b2123ce7082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 10, y: 10}
-  direction: {x: -1, y: 0}
-  isLinkedToCamera: 0
+  speed: {x: 1, y: 0}
+  direction: {x: 1, y: 0}
+  isLinkedToCamera: 1
   isLooping: 0
 --- !u!212 &212326791330817248
 SpriteRenderer:

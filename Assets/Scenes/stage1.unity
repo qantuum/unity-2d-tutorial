@@ -517,26 +517,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114036528326930180, guid: f68750cfe5fb9624ca3e933c0d39fe59,
         type: 2}
-      propertyPath: hp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 61584310491321490, guid: f68750cfe5fb9624ca3e933c0d39fe59,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114036528326930180, guid: f68750cfe5fb9624ca3e933c0d39fe59,
-        type: 2}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114196112709107998, guid: f68750cfe5fb9624ca3e933c0d39fe59,
-        type: 2}
-      propertyPath: shootingRate
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114036528326930180, guid: f68750cfe5fb9624ca3e933c0d39fe59,
-        type: 2}
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 1287861921}
@@ -545,8 +525,7 @@ Prefab:
       propertyPath: DamageImg
       value: 
       objectReference: {fileID: 623999597}
-    m_RemovedComponents:
-    - {fileID: 114286742232855530, guid: f68750cfe5fb9624ca3e933c0d39fe59, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f68750cfe5fb9624ca3e933c0d39fe59, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &280348639
@@ -3131,26 +3110,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
---- !u!1 &1887999595 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1087662484808026, guid: f68750cfe5fb9624ca3e933c0d39fe59,
-    type: 2}
-  m_PrefabInternal: {fileID: 255044294}
---- !u!114 &1887999602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1887999595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 797c96e713383a34099c3b2123ce7082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: {x: 1, y: 0}
-  direction: {x: 1, y: 0}
-  isLinkedToCamera: 1
-  isLooping: 0
 --- !u!4 &1909290688 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4733860524940394, guid: 75aec7f6e99533c4faa0f2383fe6e1b3,
