@@ -37,9 +37,11 @@ public class HealthScript : MonoBehaviour
     public void Damage(int damageCount)
     {
         hp -= damageCount;
-
+     
         if (hp <= 0)
         {
+           
+           
             // Dead!
             Destroy(gameObject);
 
@@ -96,6 +98,7 @@ public class HealthScript : MonoBehaviour
         {
             if (damaged)
             {
+                SpecialEffectsHelper.Instance.Explosion(transform.position);
                 DamageImg.color = flashColour;
                 DamageImg.color = Color.Lerp(DamageImg.color, Color.clear, flashSpeed * Time.deltaTime);
             }
